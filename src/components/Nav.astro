@@ -1,0 +1,127 @@
+---
+    generator:
+      description: "minimalistic and rsponsive header. The anchor links are buttons that have a drop shadow and turn pink with white text on hover. The buttons are rounded and modern. The Title does NOT have any hover effect. The layout should be centered in the middle of the navbar going Home, About Us, TITLE, Products, and Contact Us"
+    ---
+    <nav class="nav-header" id="navbar">
+  <a href="#" class="nav-link">home</a>
+  <a href="#" class="nav-link">about us</a>
+  <h1 class="site-title">girly drinks</h1>
+  <a href="#" class="nav-link">products</a>
+  <a href="#" class="nav-link">contact us</a>
+</nav>
+
+<style>
+  :root {
+    --heading-font: 'Lato', sans-serif;
+    --body-font: 'Roboto', sans-serif;
+    --base-size: 16px;
+    --primary: #e8a5df;
+    --secondary: #f7e78b;
+    --accent: #74e8e4;
+    --background: #ffffff;
+    --text: #212529;
+  }
+
+  body {
+    font-family: var(--body-font);
+    background-color: var(--background);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .nav-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--background);
+    font-size: var(--base-size);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: top 0.3s;
+  }
+
+  .nav-link, .site-title {
+    text-transform: lowercase;
+  }
+
+  .nav-link {
+    background-color: var(--background);
+    color: var(--primary);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: var(--body-font);
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  }
+
+  .nav-link:hover {
+    background-color: var(--primary);
+    color: var(--background);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .site-title {
+    font-family: var(--heading-font);
+    color: var(--primary);
+    margin: 0 40px;
+  }
+
+  @media (max-width: 768px) {
+    .nav-header {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .site-title {
+      margin: 20px 0;
+    }
+  }
+
+  /* Scroll behavior */
+  let lastScroll = 0;
+  const navbar = document.getElementById('navbar');
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll <= 0) {
+      navbar.style.top = '0';
+      return;
+    }
+
+    if (currentScroll > lastScroll && !navbar.style.top.includes('-')) {
+      // down
+      navbar.style.top = '-100px';
+    } else if (currentScroll < lastScroll && navbar.style.top.includes('-')) {
+      // up
+      navbar.style.top = '0';
+    }
+
+    lastScroll = currentScroll;
+  });
+</style>
+
+<script>
+  let lastScroll = 0;
+  const navbar = document.getElementById('navbar');
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll <= 0) {
+      navbar.style.top = '0';
+    } else if (currentScroll > lastScroll && navbar.style.top !== '-100px') {
+      navbar.style.top = '-100px';
+    } else if (currentScroll < lastScroll && navbar.style.top === '-100px') {
+      navbar.style.top = '0';
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>

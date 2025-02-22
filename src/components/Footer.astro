@@ -1,0 +1,101 @@
+---
+    generator:
+      description: "pink footer with white anchor links: home, about us, contact. Also include social media links (as icons not text)"
+    ---
+    <footer class="footer-section">
+  <div class="footer-content">
+    <h2 class="footer-title">Girly Drinks</h2>
+    <p class="footer-description">A website for energy drinks marketed toward girls</p>
+    <nav class="footer-nav">
+      <a href="#" class="footer-link">Home</a>
+      <a href="#" class="footer-link">About Us</a>
+      <a href="#" class="footer-link">Contact</a>
+    </nav>
+    <div class="social-icons">
+      <a href="#" class="social-link"><img src="path/to/facebook-icon.svg" alt="Facebook"></a>
+      <a href="#" class="social-link"><img src="path/to/twitter-icon.svg" alt="Twitter"></a>
+      <a href="#" class="social-link"><img src="path/to/instagram-icon.svg" alt="Instagram"></a>
+      <a href="#" class="social-link"><img src="path/to/pinterest-icon.svg" alt="Pinterest"></a>
+      <a href="#" class="social-link"><img src="path/to/youtube-icon.svg" alt="YouTube"></a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-section {
+    background-color: #e8a5df;
+    color: #212529;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .footer-title, .footer-description {
+    font-family: 'Lato', sans-serif;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  .footer-description {
+    font-size: 1rem; /* Base size for consistency */
+  }
+
+  .footer-nav {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 24px;
+  }
+
+  .footer-link {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-link:hover {
+    color: #74e8e4;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 16px;
+  }
+
+  .social-link img {
+    height: 24px;
+    width: 24px;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+    transition: filter 0.3s ease;
+  }
+
+  .social-link:hover img {
+    filter: invert(50%) sepia(76%) saturate(7464%) hue-rotate(140deg) brightness(102%) contrast(88%);
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+    }
+
+    .footer-nav, .social-icons {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .footer-link, .social-link {
+      margin: 5px;
+    }
+  }
+</style>

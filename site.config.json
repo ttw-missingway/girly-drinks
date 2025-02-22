@@ -1,0 +1,29 @@
+{
+  "title": "Girly Drinks",
+  "description": "A website for energy drinks marketed toward girls",
+  "typography": {
+    "headingFont": "Lato",
+    "bodyFont": "Roboto",
+    "baseSize": "16px"
+  },
+  "colors": {
+    "primary": "#e8a5df",
+    "secondary": "#f7e78b",
+    "accent": "#74e8e4",
+    "background": "#ffffff",
+    "text": "#212529"
+  },
+  "spacing": {
+    "base": "1rem",
+    "scale": 1.5
+  },
+  "breakpoints": {
+    "mobile": "320px",
+    "tablet": "768px",
+    "desktop": "1024px"
+  },
+  "animation": {
+    "defaultDuration": "0.3s",
+    "defaultEasing": "ease-in-out"
+  }
+}
